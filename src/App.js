@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import { withState } from './state'
 
@@ -14,7 +14,7 @@ function App({ loading }) {
 
   return (
     <>
-      <Router>
+      <Router basename="/">
         <>
           <Header />
           <Content fluid>
