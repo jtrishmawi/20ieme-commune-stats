@@ -6,7 +6,7 @@ import { reducer } from './reducer';
 
 
 const fetchSectors = async () => {
-  const response = await fetch('/data/secteurs-des-bureaux-de-vote.geojson');
+  const response = await fetch(`${process.env.PUBLIC_URL}/data/secteurs-des-bureaux-de-vote.geojson`);
   const sectors = await response.json();
 
   const filteredSectors = sectors.features.filter(feature => feature.properties.arrondissement === 20);
@@ -15,7 +15,7 @@ const fetchSectors = async () => {
 }
 
 const fetchOffices = async () => {
-  const response = await fetch('/data/bureaux-de-votes.geojson');
+  const response = await fetch(`${process.env.PUBLIC_URL}/data/bureaux-de-votes.geojson`);
   const offices = await response.json();
 
   const filteredOffices = offices.features.filter(feature => feature.properties.cp === '75020');
@@ -24,7 +24,7 @@ const fetchOffices = async () => {
 }
 
 const fetchResults = async () => {
-  const response = await fetch('/data/resultats.json');
+  const response = await fetch(`${process.env.PUBLIC_URL}/data/resultats.json`);
   return await response.json();
 }
 
